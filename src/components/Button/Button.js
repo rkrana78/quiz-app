@@ -3,9 +3,9 @@ import './Button.css'
 
 const Button = ({className, children}) => {
     return (
-        <div className={`button ${className}`} >
+        <button className={`button ${className}`} >
             {children}
-        </div>
+        </button>
     );
 };
 

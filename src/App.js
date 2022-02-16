@@ -12,6 +12,8 @@ import {
   Route,
 
 } from "react-router-dom";
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import PublicRoute from './components/PublicRoute/PublicRoute';
 
 
 
@@ -22,10 +24,10 @@ function App() {
         <Layout>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/signup' component={Signup} />
-            <Route path='/login' component={Login} />
-            <Route path='/quiz' component={Quiz} />
-            <Route path='/result' component={Result} />
+            <PublicRoute path='/signup' component={Signup} />
+            <PublicRoute path='/login' component={Login} />
+            <PrivateRoute path='/quiz/:id' component={Quiz} />
+            <PrivateRoute path='/result' component={Result} />
           </Switch>
         </Layout>
       </AuthProvider>
